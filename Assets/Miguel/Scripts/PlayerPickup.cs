@@ -27,6 +27,10 @@ public class PlayerPickup : MonoBehaviour
     [SerializeField] private float waveSpeed = 6f;
     [SerializeField] private float waveFrequency = 2f;
 
+    [Header("Offsets")]
+    [SerializeField] private Vector3 holdOffset = new Vector3(-0.45f, -0.2f, 2f);
+    [SerializeField] private Vector3 lineOffset = new Vector3(-0.25f, -0.15f, 0.2f);
+
     private Rigidbody heldObject;
     private Camera cam;
 
@@ -40,7 +44,7 @@ public class PlayerPickup : MonoBehaviour
 
         holdPoint = new GameObject("Hold Point").transform;
         holdPoint.SetParent(transform);
-        holdPoint.localPosition = new Vector3(0f, 0f, holdDistance);
+        holdPoint.localPosition = holdOffset;
 
         if (lineRenderer != null)
         {
@@ -159,7 +163,8 @@ public class PlayerPickup : MonoBehaviour
             holdDistance += scroll * 2f;
             holdDistance = Mathf.Clamp(holdDistance, 1f, 5f);
 
-            holdPoint.localPosition = new Vector3(0f, 0f, holdDistance);
+            holdOffset.z = holdDistance;
+            holdPoint.localPosition = holdOffset;
         }
     }
 
@@ -198,13 +203,16 @@ public class PlayerPickup : MonoBehaviour
         if (heldObject == null || lineRenderer == null)
             return;
 
-        Vector3 start = cam.transform.position + cam.transform.forward * 0.15f + cam.transform.right * 0.08f;
+        Vector3 start =
+            cam.transform.position +
+            cam.transform.right * lineOffset.x +
+            cam.transform.up * lineOffset.y +
+            cam.transform.forward * lineOffset.z;
+
         Vector3 end = heldObject.worldCenterOfMass;
 
         Vector3 direction = (end - start).normalized;
         Vector3 side = Vector3.Cross(direction, cam.transform.up).normalized;
-
-        float distance = Vector3.Distance(start, end);
 
         for (int i = 0; i < linePoints; i++)
         {
@@ -212,16 +220,17 @@ public class PlayerPickup : MonoBehaviour
 
             Vector3 point = Vector3.Lerp(start, end, t);
 
-            // Curvatura principal
-            float curve = Mathf.Sin(t * Mathf.PI) * 0.15f;
+            // Curvatura MUITO mais leve
+            float curve = Mathf.Sin(t * Mathf.PI) * 0.03f;
             point -= cam.transform.up * curve;
 
-            // Ondulação viva estilo REPO
-            float wave = Mathf.Sin((t * 8f) - (Time.time * waveSpeed)) * waveAmplitude;
+            // Ondulação suave
+            float wave = Mathf.Sin((t * 4f) - (Time.time * 3f)) * 0.015f;
             point += side * wave;
 
-            // Tremidinha pequena
-            point += Random.insideUnitSphere * 0.003f;
+            // Noise leve e estável
+            float noise = Mathf.PerlinNoise(Time.time * 1.5f, t * 2f) - 0.5f;
+            point += side * noise * 0.005f;
 
             lineRenderer.SetPosition(i, point);
         }
