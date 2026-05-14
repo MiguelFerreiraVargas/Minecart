@@ -8,8 +8,14 @@ public class RailCart : MonoBehaviour
     [Header("Velocidade")]
     public float speed = 5f;
 
-    [Header("Velocidade da Rotação")]
+    [Header("Rotação")]
     public float rotationSpeed = 5f;
+
+    [Header("Interação")]
+    public float interactDistance = 5f;
+
+    [Header("Camera do Player")]
+    public Camera playerCamera;
 
     private int currentPoint = 0;
     private bool moving = false;
@@ -17,8 +23,61 @@ public class RailCart : MonoBehaviour
 
     void Update()
     {
-        if (!moving) return;
+        // INTERAÇÃO
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            TryInteract();
+        }
 
+        // MOVIMENTO
+        if (moving)
+        {
+            MoveCart();
+        }
+    }
+
+    void TryInteract()
+    {
+        Ray ray = playerCamera.ScreenPointToRay(
+            new Vector3(Screen.width / 2, Screen.height / 2)
+        );
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, interactDistance))
+        {
+            // verifica se olhou pra ESSE carrinho
+            if (hit.collider.gameObject == gameObject)
+            {
+                StartCart();
+            }
+        }
+    }
+
+    void StartCart()
+    {
+        if (moving) return;
+
+        // indo
+        if (currentPoint == 0)
+        {
+            goingForward = true;
+
+            if (points.Length > 1)
+                currentPoint = 1;
+        }
+        // voltando
+        else
+        {
+            goingForward = false;
+            currentPoint = points.Length - 2;
+        }
+
+        moving = true;
+    }
+
+    void MoveCart()
+    {
         Transform target = points[currentPoint];
 
         // MOVE
@@ -28,37 +87,32 @@ public class RailCart : MonoBehaviour
             speed * Time.deltaTime
         );
 
-        // GIRA baseado na rotação do Point
+        // ROTAÇÃO
         transform.rotation = Quaternion.Lerp(
             transform.rotation,
             target.rotation,
             rotationSpeed * Time.deltaTime
         );
 
-        // CHEGOU NO POINT
+        // CHEGOU
         if (Vector3.Distance(transform.position, target.position) < 0.01f)
         {
-            // trava exatamente no point
             transform.position = target.position;
 
-            // indo pra frente
             if (goingForward)
             {
                 currentPoint++;
 
-                // chegou no final
                 if (currentPoint >= points.Length)
                 {
                     currentPoint = points.Length - 1;
                     moving = false;
                 }
             }
-            // voltando
             else
             {
                 currentPoint--;
 
-                // chegou no começo
                 if (currentPoint < 0)
                 {
                     currentPoint = 0;
@@ -66,30 +120,5 @@ public class RailCart : MonoBehaviour
                 }
             }
         }
-    }
-
-    void OnMouseDown()
-    {
-        // se já estiver andando
-        if (moving) return;
-
-        // se estiver no começo ? vai
-        if (currentPoint == 0)
-        {
-            goingForward = true;
-
-            if (points.Length > 1)
-            {
-                currentPoint = 1;
-            }
-        }
-        // se estiver no final ? volta
-        else
-        {
-            goingForward = false;
-            currentPoint = points.Length - 2;
-        }
-
-        moving = true;
     }
 }
