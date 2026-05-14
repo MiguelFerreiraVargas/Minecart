@@ -2,8 +2,14 @@ using UnityEngine;
 
 public class RailCart : MonoBehaviour
 {
+    [Header("Pontos do Trilho")]
     public Transform[] points;
+
+    [Header("Velocidade")]
     public float speed = 5f;
+
+    [Header("Velocidade da Rotação")]
+    public float rotationSpeed = 5f;
 
     private int currentPoint = 0;
     private bool moving = false;
@@ -15,16 +21,24 @@ public class RailCart : MonoBehaviour
 
         Transform target = points[currentPoint];
 
-        // move
+        // MOVE
         transform.position = Vector3.MoveTowards(
             transform.position,
             target.position,
             speed * Time.deltaTime
         );
 
-        // chegou no ponto
+        // GIRA baseado na rotação do Point
+        transform.rotation = Quaternion.Lerp(
+            transform.rotation,
+            target.rotation,
+            rotationSpeed * Time.deltaTime
+        );
+
+        // CHEGOU NO POINT
         if (Vector3.Distance(transform.position, target.position) < 0.01f)
         {
+            // trava exatamente no point
             transform.position = target.position;
 
             // indo pra frente
@@ -56,20 +70,22 @@ public class RailCart : MonoBehaviour
 
     void OnMouseDown()
     {
-        // se já estiver andando ignora
+        // se já estiver andando
         if (moving) return;
 
-        // se estiver no começo ? vai pra frente
+        // se estiver no começo ? vai
         if (currentPoint == 0)
         {
             goingForward = true;
 
             if (points.Length > 1)
+            {
                 currentPoint = 1;
+            }
         }
+        // se estiver no final ? volta
         else
         {
-            // se estiver no final ? volta
             goingForward = false;
             currentPoint = points.Length - 2;
         }
