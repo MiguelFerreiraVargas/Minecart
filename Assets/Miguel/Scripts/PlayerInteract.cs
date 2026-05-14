@@ -4,7 +4,7 @@ public class PlayerInteract : MonoBehaviour
 {
     public float distance = 3f;
     public LayerMask interactLayer;
-    public GameObject interactUI; // texto "Pressione TAB"
+    public GameObject interactUI;
     public UIManager uiManager;
 
     private GameObject currentNPC;
