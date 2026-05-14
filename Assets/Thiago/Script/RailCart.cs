@@ -7,12 +7,11 @@ public class RailCart : MonoBehaviour
 
     private int currentPoint = 0;
     private bool moving = false;
+    private bool goingForward = true;
 
     void Update()
     {
         if (!moving) return;
-
-        if (currentPoint >= points.Length) return;
 
         Transform target = points[currentPoint];
 
@@ -23,30 +22,58 @@ public class RailCart : MonoBehaviour
             speed * Time.deltaTime
         );
 
-        // distância até o ponto
-        float distance = Vector3.Distance(
-            transform.position,
-            target.position
-        );
-
-        // chegou
-        if (distance <= 0.01f)
+        // chegou no ponto
+        if (Vector3.Distance(transform.position, target.position) < 0.01f)
         {
-            // trava EXATAMENTE no ponto
             transform.position = target.position;
 
-            currentPoint++;
-
-            // terminou
-            if (currentPoint >= points.Length)
+            // indo pra frente
+            if (goingForward)
             {
-                moving = false;
+                currentPoint++;
+
+                // chegou no final
+                if (currentPoint >= points.Length)
+                {
+                    currentPoint = points.Length - 1;
+                    moving = false;
+                }
+            }
+            // voltando
+            else
+            {
+                currentPoint--;
+
+                // chegou no começo
+                if (currentPoint < 0)
+                {
+                    currentPoint = 0;
+                    moving = false;
+                }
             }
         }
     }
 
     void OnMouseDown()
     {
+        // se já estiver andando ignora
+        if (moving) return;
+
+        // se estiver no começo ? vai pra frente
+        if (currentPoint == 0)
+        {
+            goingForward = true;
+
+            if (points.Length > 1)
+                currentPoint = 1;
+        }
+        else
+        {
+            // se estiver no final ? volta
+            goingForward = false;
+            currentPoint = points.Length - 2;
+        }
+
         moving = true;
     }
 }
