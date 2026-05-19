@@ -2,17 +2,24 @@ using UnityEngine;
 
 public class Ore : MonoBehaviour
 {
-    [Header("Item")]
     public ItemData itemData;
 
-    [Header("Vida")]
     public int health = 3;
+
+    private int currentHealth;
+
+    public OreSpawnPoint spawnPoint;
+
+    void OnEnable()
+    {
+        currentHealth = health;
+    }
 
     public void HitOre()
     {
-        health--;
+        currentHealth--;
 
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
             BreakOre();
         }
@@ -22,6 +29,11 @@ public class Ore : MonoBehaviour
     {
         InventoryManager.Instance.AddItem(itemData);
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+
+        if (spawnPoint != null)
+        {
+            spawnPoint.OreDestroyed();
+        }
     }
 }

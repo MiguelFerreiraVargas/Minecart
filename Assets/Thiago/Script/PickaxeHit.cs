@@ -13,7 +13,7 @@ public class PickaxeHit : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit, range))
             {
-                Ore ore = hit.collider.GetComponent<Ore>();
+                Ore ore = hit.collider.GetComponentInParent<Ore>();
 
                 if (ore != null)
                 {
