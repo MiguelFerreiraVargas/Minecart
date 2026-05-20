@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 670e1b37afea11640995332271945f00
+guid: 634bc2c7962035743946659005e45552
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Begsta Pearl DEMO VERSION
+  - Magics Flavor
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
