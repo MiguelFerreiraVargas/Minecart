@@ -2,15 +2,35 @@ using UnityEngine;
 
 public class Ore : MonoBehaviour
 {
+    [Header("Item do inventário")]
     public ItemData itemData;
 
+    [Header("Vida")]
     public int health = 3;
 
     private int currentHealth;
 
+    [HideInInspector]
     public OreSpawnPoint spawnPoint;
 
-    void OnEnable()
+    void Awake()
+    {
+        Renderer[] rends = GetComponentsInChildren<Renderer>(true);
+
+        foreach (Renderer r in rends)
+        {
+            r.enabled = true;
+        }
+
+        Collider[] cols = GetComponentsInChildren<Collider>(true);
+
+        foreach (Collider c in cols)
+        {
+            c.enabled = true;
+        }
+    }
+
+    void Start()
     {
         currentHealth = health;
     }
@@ -27,13 +47,16 @@ public class Ore : MonoBehaviour
 
     void BreakOre()
     {
-        InventoryManager.Instance.AddItem(itemData);
-
-        gameObject.SetActive(false);
+        if (InventoryManager.Instance != null)
+        {
+            InventoryManager.Instance.AddItem(itemData);
+        }
 
         if (spawnPoint != null)
         {
-            spawnPoint.OreDestroyed();
+            spawnPoint.RespawnOre();
         }
+
+        Destroy(gameObject);
     }
 }

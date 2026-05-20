@@ -13,11 +13,18 @@ public class PickaxeHit : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit, range))
             {
+                Debug.Log("ACERTOU: " + hit.collider.name);
+
                 Ore ore = hit.collider.GetComponentInParent<Ore>();
 
                 if (ore != null)
                 {
+                    Debug.Log("TEM ORE");
                     ore.HitOre();
+                }
+                else
+                {
+                    Debug.Log("NÃO TEM ORE");
                 }
             }
         }

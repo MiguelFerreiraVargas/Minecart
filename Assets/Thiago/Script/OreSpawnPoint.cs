@@ -11,35 +11,50 @@ public class OreSpawnPoint : MonoBehaviour
         public int chance;
     }
 
+    [Header("Minérios possíveis")]
     public OreChance[] ores;
 
+    [Header("Tempo de respawn")]
     public float respawnTime = 10f;
+
+    [Header("Multiplicador de escala")]
+    public float oreScaleMultiplier = 400f;
 
     private GameObject currentOre;
 
     void Start()
     {
-        SpawnRandomOre();
+        SpawnOre();
     }
 
-    void SpawnRandomOre()
+    void SpawnOre()
     {
+        // evita duplicar minério
+        if (currentOre != null)
+            return;
+
         int random = Random.Range(0, 100);
 
         int total = 0;
 
         foreach (OreChance ore in ores)
         {
+            if (ore.oreObject == null)
+                continue;
+
             total += ore.chance;
 
             if (random < total)
             {
-                currentOre = ore.oreObject;
+                currentOre = Instantiate(
+                    ore.oreObject,
+                    transform.position,
+                    transform.rotation
+                );
 
                 currentOre.SetActive(true);
 
-                currentOre.transform.position = transform.position;
-                currentOre.transform.rotation = transform.rotation;
+                currentOre.transform.localScale *= oreScaleMultiplier;
 
                 Ore oreScript = currentOre.GetComponent<Ore>();
 
@@ -53,13 +68,10 @@ public class OreSpawnPoint : MonoBehaviour
         }
     }
 
-    public void OreDestroyed()
+    public void RespawnOre()
     {
-        if (currentOre != null)
-        {
-            currentOre.SetActive(false);
-        }
+        currentOre = null;
 
-        Invoke(nameof(SpawnRandomOre), respawnTime);
+        Invoke(nameof(SpawnOre), respawnTime);
     }
 }
