@@ -4428,6 +4428,7 @@ GameObject:
   - component: {fileID: 316887402}
   - component: {fileID: 316887401}
   - component: {fileID: 316887400}
+  - component: {fileID: 316887405}
   m_Layer: 3
   m_Name: NPC
   m_TagString: NPC
@@ -4450,7 +4451,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -4471,7 +4472,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -4551,6 +4552,19 @@ Transform:
   - {fileID: 1101680264}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &316887405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316887399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8aa7a5edd0e6b2408967a8ac9348562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShopNPC
+  shopUI: {fileID: 324352913}
 --- !u!1001 &321217319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4608,6 +4622,99 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d42b3ff7c1952445905adf283a4e3b7, type: 3}
+--- !u!1 &324352913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 324352914}
+  - component: {fileID: 324352917}
+  - component: {fileID: 324352916}
+  - component: {fileID: 324352915}
+  m_Layer: 5
+  m_Name: ShopPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &324352914
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324352913}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.9, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1007986155}
+  - {fileID: 933825690}
+  - {fileID: 458655503}
+  m_Father: {fileID: 1125007336}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &324352915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324352913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77bab9ba9435ba34e9541534d13e2c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShopUI
+  itemsParent: {fileID: 458655503}
+  itemPrefab: {fileID: 1508521295941382072, guid: 1cbcfaf9600c5b14b8ac63fa1414412f, type: 3}
+--- !u!114 &324352916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324352913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.49574798, b: 0, a: 0.5686275}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &324352917
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324352913}
+  m_CullTransparentMesh: 1
 --- !u!1001 &327715665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4736,15 +4843,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -4920,15 +5027,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -5912,15 +6019,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -6226,6 +6333,83 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d42b3ff7c1952445905adf283a4e3b7, type: 3}
+--- !u!1 &458655502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 458655503}
+  - component: {fileID: 458655505}
+  - component: {fileID: 458655504}
+  m_Layer: 5
+  m_Name: ItemsParents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &458655503
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458655502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 324352914}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &458655504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458655502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
+--- !u!114 &458655505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458655502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1001 &459382084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6602,15 +6786,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -7129,15 +7313,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -7978,15 +8162,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -8379,15 +8563,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -8625,15 +8809,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -9439,52 +9623,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 917792bf353be454a8f6fcbb0cf2604a, type: 3}
---- !u!1 &622010318
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 622010320}
-  - component: {fileID: 622010319}
-  m_Layer: 0
-  m_Name: UIManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &622010319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622010318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5e1c12193fddf244895eb669395b26f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UIManager
-  shopUI: {fileID: 0}
-  interactUI: {fileID: 0}
---- !u!4 &622010320
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622010318}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 54.50106, y: 0.03806, z: -65.51452}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &623180395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9650,15 +9788,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -10047,7 +10185,7 @@ GameObject:
   - component: {fileID: 648948265}
   - component: {fileID: 648948268}
   - component: {fileID: 648948267}
-  - component: {fileID: 648948266}
+  - component: {fileID: 648948269}
   m_Layer: 5
   m_Name: InventoryPanel
   m_TagString: Untagged
@@ -10064,7 +10202,7 @@ RectTransform:
   m_GameObject: {fileID: 648948264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.9, z: 1}
+  m_LocalScale: {x: 1, y: 0.756207, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1125007336}
@@ -10072,34 +10210,8 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 700, y: 100}
+  m_SizeDelta: {x: 700, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &648948266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648948264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 10
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!114 &648948267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10113,7 +10225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.49803922}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6313726}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10138,6 +10250,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648948264}
   m_CullTransparentMesh: 1
+--- !u!114 &648948269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648948264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 90, y: 120}
+  m_Spacing: {x: 2, y: 2}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1001 &654556635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11324,12 +11460,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719617641}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 57.36041, y: 0.01274, z: -61.4959}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.6104088, y: -0.15675, z: -1.2815399}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1168664950}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &719617643
 MonoBehaviour:
@@ -12053,15 +12189,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -12294,15 +12430,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -13696,15 +13832,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -15236,6 +15372,139 @@ Transform:
   m_Children: []
   m_Father: {fileID: 497335155}
   m_LocalEulerAnglesHint: {x: 0, y: 189.578, z: 0}
+--- !u!1 &933825689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 933825690}
+  - component: {fileID: 933825693}
+  - component: {fileID: 933825692}
+  - component: {fileID: 933825691}
+  m_Layer: 5
+  m_Name: SellAllButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &933825690
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933825689}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.4960673, y: 2.4960673, z: 2.4960673}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1228139980}
+  m_Father: {fileID: 324352914}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 645, y: -391}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &933825691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933825689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 933825692}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 324352915}
+        m_TargetAssemblyTypeName: ShopUI, Assembly-CSharp
+        m_MethodName: SellAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &933825692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933825689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &933825693
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933825689}
+  m_CullTransparentMesh: 1
 --- !u!4 &939610955 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5271391431140986986, guid: 7d42b3ff7c1952445905adf283a4e3b7, type: 3}
@@ -15935,6 +16204,142 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 917792bf353be454a8f6fcbb0cf2604a, type: 3}
+--- !u!1 &1007986154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1007986155}
+  - component: {fileID: 1007986157}
+  - component: {fileID: 1007986156}
+  m_Layer: 5
+  m_Name: Title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1007986155
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007986154}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.7157, y: 2.7157, z: 2.7157}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 324352914}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 186, y: 538}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1007986156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007986154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Shop
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 5e6cd667ad159e64c8b11452fa799518, type: 2}
+  m_sharedMaterial: {fileID: 3972584773033416465, guid: 5e6cd667ad159e64c8b11452fa799518, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1007986157
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007986154}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1012626876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16668,15 +17073,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -17810,6 +18215,8 @@ RectTransform:
   m_Children:
   - {fileID: 602464464}
   - {fileID: 648948265}
+  - {fileID: 324352914}
+  - {fileID: 2092888338}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -18518,6 +18925,7 @@ Transform:
   - {fileID: 565855773}
   - {fileID: 1676033409}
   - {fileID: 603343618}
+  - {fileID: 719617642}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1169307454
@@ -19096,6 +19504,142 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2763921481354444034, guid: 9480407949b1e0b43bef93cbdebe6c0e, type: 3}
   m_PrefabInstance: {fileID: 1226982801}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1228139979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1228139980}
+  - component: {fileID: 1228139982}
+  - component: {fileID: 1228139981}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1228139980
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228139979}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 933825690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1228139981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228139979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Button
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1228139982
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228139979}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1231776822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19266,15 +19810,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -22147,15 +22691,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -23690,15 +24234,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -24786,15 +25330,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -26479,15 +27023,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -26596,15 +27140,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -26646,6 +27190,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5271391431140986986, guid: 7d42b3ff7c1952445905adf283a4e3b7, type: 3}
   m_PrefabInstance: {fileID: 449095616}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1677937912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1677937914}
+  - component: {fileID: 1677937913}
+  m_Layer: 0
+  m_Name: MoneyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1677937913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677937912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1414f0a85021c9b44b37dc7e2850535d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoneyManager
+  money: 0
+  moneyText: {fileID: 2092888336}
+--- !u!4 &1677937914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677937912}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 40.14472, y: 0.6806, z: -56.02507}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1680418950
 GameObject:
   m_ObjectHideFlags: 0
@@ -29028,15 +29618,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -30330,15 +30920,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -31478,15 +32068,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -32600,15 +33190,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -33553,6 +34143,144 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a681486c498eaf48bd25594270c0bc6, type: 3}
+--- !u!1 &2092888335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2092888338}
+  - component: {fileID: 2092888337}
+  - component: {fileID: 2092888336}
+  m_Layer: 5
+  m_Name: Money
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2092888336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092888335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: '$ 0
+
+'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278246712
+  m_fontColor: {r: 0.21926315, g: 0.8679245, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 50
+  m_fontSizeBase: 50
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &2092888337
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092888335}
+  m_CullTransparentMesh: 1
+--- !u!224 &2092888338
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092888335}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1125007336}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 316.8, y: 502}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &2097925032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33661,15 +34389,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -33850,15 +34578,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OreSpawnPoint
   ores:
   - orePrefab: {fileID: 4862720283471366872, guid: 1d911271c3bc65e4392fa6cb284db3fe, type: 3}
-    chance: 55
+    chance: 70
   - orePrefab: {fileID: 6876959990848270107, guid: ae1bc26fb2d08ad44848e2889ac159d7, type: 3}
-    chance: 20
+    chance: 15
   - orePrefab: {fileID: 8637215599846900661, guid: 1b73e5b0cc518804eb098a43e7275e93, type: 3}
-    chance: 12
+    chance: 5
   - orePrefab: {fileID: 694718970038903831, guid: 898d395300d90544ebf955d58f8f397c, type: 3}
-    chance: 6
-  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
     chance: 4
+  - orePrefab: {fileID: 6931893967478721098, guid: d3c29aa03621eda42b452fb10f59debb, type: 3}
+    chance: 3
   - orePrefab: {fileID: 7864835537576640272, guid: 61736d649cc0c114984328daf228b540, type: 3}
     chance: 2
   - orePrefab: {fileID: 5277819951218577886, guid: ada99ca63ac91b0408f7b5d14ba7201b, type: 3}
@@ -35375,14 +36103,13 @@ SceneRoots:
   - {fileID: 291220633}
   - {fileID: 718019968}
   - {fileID: 316887404}
-  - {fileID: 622010320}
   - {fileID: 1998521589}
   - {fileID: 1125007336}
   - {fileID: 731156133}
   - {fileID: 701536392}
   - {fileID: 1353377451}
   - {fileID: 1168664950}
-  - {fileID: 719617642}
   - {fileID: 1744639353}
   - {fileID: 8773398853524062107}
   - {fileID: 211522897}
+  - {fileID: 1677937914}
