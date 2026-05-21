@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Iron
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: Iron
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 83ff290172c34544b9836f200853fad5, type: 3}
   stackable: 1

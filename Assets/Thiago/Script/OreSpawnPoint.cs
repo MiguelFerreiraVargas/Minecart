@@ -5,20 +5,15 @@ public class OreSpawnPoint : MonoBehaviour
     [System.Serializable]
     public class OreChance
     {
-        public GameObject oreObject;
+        public GameObject orePrefab;
 
         [Range(0, 100)]
         public int chance;
     }
 
-    [Header("Minérios possíveis")]
     public OreChance[] ores;
 
-    [Header("Tempo de respawn")]
     public float respawnTime = 10f;
-
-    [Header("Multiplicador de escala")]
-    public float oreScaleMultiplier = 400f;
 
     private GameObject currentOre;
 
@@ -29,7 +24,6 @@ public class OreSpawnPoint : MonoBehaviour
 
     void SpawnOre()
     {
-        // evita duplicar minério
         if (currentOre != null)
             return;
 
@@ -39,7 +33,7 @@ public class OreSpawnPoint : MonoBehaviour
 
         foreach (OreChance ore in ores)
         {
-            if (ore.oreObject == null)
+            if (ore.orePrefab == null)
                 continue;
 
             total += ore.chance;
@@ -47,14 +41,10 @@ public class OreSpawnPoint : MonoBehaviour
             if (random < total)
             {
                 currentOre = Instantiate(
-                    ore.oreObject,
+                    ore.orePrefab,
                     transform.position,
                     transform.rotation
                 );
-
-                currentOre.SetActive(true);
-
-                currentOre.transform.localScale *= oreScaleMultiplier;
 
                 Ore oreScript = currentOre.GetComponent<Ore>();
 

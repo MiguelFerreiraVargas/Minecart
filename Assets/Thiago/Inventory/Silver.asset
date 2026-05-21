@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Silver
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 89d7f27836cbb384ab6039599ebbdcd1, type: 3}
   stackable: 1

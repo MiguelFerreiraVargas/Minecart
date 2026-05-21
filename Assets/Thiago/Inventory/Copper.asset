@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Copper
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: Copper
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 43226d82881a03d478f62c40947d5efd, type: 3}
   stackable: 1
