@@ -18,5 +18,5 @@ MonoBehaviour:
   itemColor: {r: 1, g: 1, b: 1, a: 1}
   stackable: 1
   maxStack: 50
-  value: 0
+  value: 50
   rarity: 0

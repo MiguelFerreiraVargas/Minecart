@@ -13,5 +13,10 @@ MonoBehaviour:
   m_Name: Gold
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: Gold
+  description: 
   icon: {fileID: 21300000, guid: adbf9c3f2c27dfd44b1faf3f2e86e9d3, type: 3}
+  itemColor: {r: 1, g: 1, b: 1, a: 1}
   stackable: 1
+  maxStack: 99
+  value: 30
+  rarity: 0
