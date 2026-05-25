@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df7874d526d7274388ce11931dfdadc, type: 3}
   m_Name: Gold
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: Gold
+  itemName: Ouro
   description: 
   icon: {fileID: 21300000, guid: adbf9c3f2c27dfd44b1faf3f2e86e9d3, type: 3}
   itemColor: {r: 1, g: 1, b: 1, a: 1}
