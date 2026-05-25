@@ -26,6 +26,18 @@ public class MoneyManager : MonoBehaviour
         UpdateMoneyUI();
     }
 
+    public bool SpendMoney(int amount)
+    {
+        if (money < amount)
+            return false;
+
+        money -= amount;
+
+        UpdateMoneyUI();
+
+        return true;
+    }
+
     void UpdateMoneyUI()
     {
         moneyText.text = "$ " + money;
