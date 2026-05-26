@@ -10,28 +10,27 @@ public class CameraShake : MonoBehaviour
     void Awake()
     {
         Instance = this;
-    }
-
-    public void Shake(float duration, float magnitude)
-    {
-        StartCoroutine(ShakeCoroutine(duration, magnitude));
-    }
-
-    IEnumerator ShakeCoroutine(float duration, float magnitude)
-    {
         originalPos = transform.localPosition;
+    }
 
-        float elapsed = 0f;
+    public void Shake(float duration, float strength)
+    {
+        StopAllCoroutines();
+        StartCoroutine(ShakeRoutine(duration, strength));
+    }
 
-        while (elapsed < duration)
+    IEnumerator ShakeRoutine(float duration, float strength)
+    {
+        float timer = 0f;
+
+        while (timer < duration)
         {
-            float x = Random.Range(-1f, 1f) * magnitude;
-            float y = Random.Range(-1f, 1f) * magnitude;
+            Vector3 randomPos =
+                originalPos + Random.insideUnitSphere * strength;
 
-            transform.localPosition =
-                originalPos + new Vector3(x, y, 0);
+            transform.localPosition = randomPos;
 
-            elapsed += Time.deltaTime;
+            timer += Time.deltaTime;
 
             yield return null;
         }

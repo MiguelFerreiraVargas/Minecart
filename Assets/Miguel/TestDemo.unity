@@ -841,7 +841,7 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 3907860191337235686, guid: 2cdc286766dbf1246aef3fd1f6e23bdf, type: 3}
   m_PrefabInstance: {fileID: 1617833290}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &44192653
+--- !u!114 &44192657
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -26043,12 +26043,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1111803402831330729, guid: 2cdc286766dbf1246aef3fd1f6e23bdf, type: 3}
+      propertyPath: m_CameraType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111803402831330729, guid: 2cdc286766dbf1246aef3fd1f6e23bdf, type: 3}
       propertyPath: m_RendererIndex
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1111803402831330729, guid: 2cdc286766dbf1246aef3fd1f6e23bdf, type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696273293418583268, guid: 2cdc286766dbf1246aef3fd1f6e23bdf, type: 3}
+      propertyPath: NoiseProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    - target: {fileID: 3696273293418583268, guid: 2cdc286766dbf1246aef3fd1f6e23bdf, type: 3}
+      propertyPath: AmplitudeGain
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696273293418583268, guid: 2cdc286766dbf1246aef3fd1f6e23bdf, type: 3}
+      propertyPath: FrequencyGain
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3696273293893100836, guid: 2cdc286766dbf1246aef3fd1f6e23bdf, type: 3}
       propertyPath: BlendHint
@@ -26091,6 +26107,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3907860191337235686, guid: 2cdc286766dbf1246aef3fd1f6e23bdf, type: 3}
+      propertyPath: m_ClearFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3907860191337235686, guid: 2cdc286766dbf1246aef3fd1f6e23bdf, type: 3}
       propertyPath: orthographic
       value: 0
       objectReference: {fileID: 0}
@@ -26125,6 +26145,10 @@ PrefabInstance:
     - target: {fileID: 3907860191337235686, guid: 2cdc286766dbf1246aef3fd1f6e23bdf, type: 3}
       propertyPath: m_projectionMatrixMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027405692417341689, guid: 2cdc286766dbf1246aef3fd1f6e23bdf, type: 3}
+      propertyPath: LensModeOverride.Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8381762902680479557, guid: 2cdc286766dbf1246aef3fd1f6e23bdf, type: 3}
       propertyPath: m_Name
@@ -26185,7 +26209,7 @@ PrefabInstance:
       addedObject: {fileID: 44192647}
     - targetCorrespondingSourceObject: {fileID: 3907860191337235684, guid: 2cdc286766dbf1246aef3fd1f6e23bdf, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 44192653}
+      addedObject: {fileID: 44192657}
     - targetCorrespondingSourceObject: {fileID: 6312309164358244072, guid: 2cdc286766dbf1246aef3fd1f6e23bdf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2056749315}

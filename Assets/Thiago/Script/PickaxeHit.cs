@@ -35,7 +35,7 @@ public class PickaxeHit : MonoBehaviour
                     );
 
                     // CAMERA SHAKE
-                    CameraShake.Instance.Shake(0.08f, 0.05f);
+                    CameraShake.Instance.Shake(0.1f, 20f);
                 }
                 else
                 {
