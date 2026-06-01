@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df7874d526d7274388ce11931dfdadc, type: 3}
   m_Name: Iron
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: Iron
+  itemName: Ferro
   description: 
   icon: {fileID: 21300000, guid: 83ff290172c34544b9836f200853fad5, type: 3}
   itemColor: {r: 1, g: 1, b: 1, a: 1}
