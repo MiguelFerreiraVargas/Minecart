@@ -2721,8 +2721,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5e6cd667ad159e64c8b11452fa799518, type: 2}
-  m_sharedMaterial: {fileID: 3972584773033416465, guid: 5e6cd667ad159e64c8b11452fa799518, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c5460de17cd8053489245213df8c9772, type: 2}
+  m_sharedMaterial: {fileID: -8875765002729407461, guid: c5460de17cd8053489245213df8c9772, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3035,8 +3035,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Credits
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5e6cd667ad159e64c8b11452fa799518, type: 2}
-  m_sharedMaterial: {fileID: 3972584773033416465, guid: 5e6cd667ad159e64c8b11452fa799518, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c5460de17cd8053489245213df8c9772, type: 2}
+  m_sharedMaterial: {fileID: -8875765002729407461, guid: c5460de17cd8053489245213df8c9772, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5647,8 +5647,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5e6cd667ad159e64c8b11452fa799518, type: 2}
-  m_sharedMaterial: {fileID: 3972584773033416465, guid: 5e6cd667ad159e64c8b11452fa799518, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c5460de17cd8053489245213df8c9772, type: 2}
+  m_sharedMaterial: {fileID: -8875765002729407461, guid: c5460de17cd8053489245213df8c9772, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6946,15 +6946,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: The Railway
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5e6cd667ad159e64c8b11452fa799518, type: 2}
-  m_sharedMaterial: {fileID: 3972584773033416465, guid: 5e6cd667ad159e64c8b11452fa799518, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c5460de17cd8053489245213df8c9772, type: 2}
+  m_sharedMaterial: {fileID: -8875765002729407461, guid: c5460de17cd8053489245213df8c9772, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293519849
-  m_fontColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
